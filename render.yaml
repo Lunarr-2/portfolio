@@ -14,6 +14,8 @@ services:
         fromDatabase:
           name: portfolio-db
           property: connectionString
+      - key: RESEND_API_KEY
+        sync: false 
 
 databases:
   - name: portfolio-db
