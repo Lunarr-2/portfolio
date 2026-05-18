@@ -22,8 +22,8 @@ class Post(Base):
     __tablename__ = "posts"
 
     id : Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
-    title: Mapped[str] = mapped_column(String(15),  nullable=False)
-    description: Mapped[str] = mapped_column(String(50), nullable=False)
+    title: Mapped[str] = mapped_column(String(150),  nullable=False)
+    description: Mapped[str] = mapped_column(String(500), nullable=False)
     github_link : Mapped[str] = mapped_column(String,  nullable=False)
     tools: Mapped[list] = mapped_column(JSON, nullable=False, default=list)
     admin_id : Mapped[int] = mapped_column(

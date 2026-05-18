@@ -54,7 +54,7 @@ class PostCreate(PostModel):
 class PostUpdate(BaseModel):
     title: Optional[str] = Field(None,min_length=3,max_length=150,example="Project 1")
     description: Optional[str] = Field(None,min_length=10,max_length=500,example="This is a description for Project 1")
-    github_link : Optional[str] = Field(None,min_length=3,max_length=250,example="projec1@githublink.com")
+    github_link : Optional[str] = Field(None,min_length=3,example="projec1@githublink.com")
     tools: Optional[List[str]] = Field(None)
 
 class PostResponse(PostModel):
