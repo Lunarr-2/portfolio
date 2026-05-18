@@ -7,8 +7,8 @@ import os
 DATABASE_URL = os.environ.get("DATABASE_URL", "sqlite+aiosqlite:///./portfolio.db")
 
 # Render gives postgres:// but SQLAlchemy needs postgresql+asyncpg://
-if DATABASE_URL.startswith("postgres://"):
-    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+asyncpg://", 1)
+DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+asyncpg://")
+DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://")
 
 engine = create_async_engine(DATABASE_URL)
 
