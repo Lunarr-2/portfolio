@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/css/styles.css"> 
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">dev<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#resume">resume</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Available for opportunities</div>
+    <h1 class="hero-name">
+      Taiwo<br>
+      <span class="line2">Sheriff</span><br>
+      Tolulope.
+    </h1>
+    <p class="hero-tagline">
+      Backend developer &amp; data analyst. I build <strong>fast APIs</strong>, <strong>clean data pipelines</strong>, and systems that scale — from SQLite to production.
+    </p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#resume" class="btn-secondary">Download CV</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-grid-art">
+      <div class="hga-crosshair"></div>
+      <div class="hga-crosshair-v"></div>
+      <div class="hga-outer"></div>
+      <div class="hga-mid"></div>
+      <div class="hga-inner"></div>
+      <div class="hga-center">
+        <div class="hga-center-label">Full<br>Stack</div>
+      </div>
+      <span class="hga-tag" style="top:8px; left:50%; transform:translateX(-50%)">FastAPI</span>
+      <span class="hga-tag" style="bottom:8px; left:50%; transform:translateX(-50%)">SQLAlchemy</span>
+      <span class="hga-tag" style="left:-10px; top:50%; transform:translateY(-50%)">Python</span>
+      <span class="hga-tag" style="right:-10px; top:50%; transform:translateY(-50%)">Pandas</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS BAR -->
+<div class="status-bar">
+  <div class="status-pulse"></div>
+  <span class="status-text">Currently building · Open to backend &amp; data roles</span>
+  <div class="status-stack">
+    <span class="status-tag active">Python</span>
+    <span class="status-tag active">FastAPI</span>
+    <span class="status-tag active">SQLAlchemy</span>
+    <span class="status-tag">Pandas</span>
+    <span class="status-tag">SQL</span>
+    <span class="status-tag">Docker</span>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">01 — Expertise</div>
+  <h2 class="section-title">Skills &amp;<br>Tech Stack</h2>
+
+  <div class="skills-grid">
+    <div class="skill-cell reveal">
+      <div class="skill-category">Backend</div>
+      <div class="skill-name">FastAPI</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 78%"></div></div>
+      <div class="skill-level">Proficient</div>
+    </div>
+    <div class="skill-cell reveal">
+      <div class="skill-category">Backend</div>
+      <div class="skill-name">SQLAlchemy</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 72%"></div></div>
+      <div class="skill-level">Proficient</div>
+    </div>
+    <div class="skill-cell reveal">
+      <div class="skill-category">Language</div>
+      <div class="skill-name">Python</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%"></div></div>
+      <div class="skill-level">Advanced</div>
+    </div>
+    <div class="skill-cell reveal">
+      <div class="skill-category">Data</div>
+      <div class="skill-name">Pandas / NumPy</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 80%"></div></div>
+      <div class="skill-level">Advanced</div>
+    </div>
+    <div class="skill-cell reveal">
+      <div class="skill-category">Database</div>
+      <div class="skill-name">SQL / SQLite</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 75%"></div></div>
+      <div class="skill-level">Proficient</div>
+    </div>
+    <div class="skill-cell reveal">
+      <div class="skill-category">Auth &amp; Security</div>
+      <div class="skill-name">JWT / OAuth2</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 65%"></div></div>
+      <div class="skill-level">Learning</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">02 — Work</div>
+  <h2 class="section-title">Featured<br>Projects</h2>
+
+  <!-- Bug 1 fix: grid div must exist BEFORE JS runs appendChild on it -->
+  <div class="projects-grid" id="projects-grid">
+    <p id="projects-loading" style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.8rem;">
+      Loading projects...
+    </p>
+  </div>
+
+  <!-- <div class="projects-grid">
+    <div class="project-card reveal">
+      <div id="project-no" class="project-num">// </div>
+      <div id="title-project"c lass="project-title"> </div>
+      <p id="desc-project" class="project-desc"></p>
+      <div class="project-tags">
+        <span id="tags" class="project-tag"></span>
+      </div>
+      <a href="#" class="project-link">GitHub <span class="project-link-arrow">→</span></a>
+    </div>
+
+    projectNumber = document.findElementByID(project-no)
+    projectTitle = document.findElementByID(title-project)
+    projectDesc = document.findElementByID(desc-project)
+    projectTags = document.findElementByID(tags) -->
+
+  <!-- <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-num">// 001</div>
+      <div class="project-title">Portfolio API</div>
+      <p class="project-desc">A fully async FastAPI backend powering this very portfolio. JWT authentication, SQLAlchemy ORM with SQLite, and clean Pydantic schemas for admin and post management.</p>
+      <div class="project-tags">
+        <span class="project-tag">FastAPI</span>
+        <span class="project-tag">SQLAlchemy</span>
+        <span class="project-tag">Pydantic</span>
+        <span class="project-tag">SQLite</span>
+      </div>
+      <a href="#" class="project-link">GitHub <span class="project-link-arrow">→</span></a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">// 002</div>
+      <div class="project-title">Data Pipeline</div>
+      <p class="project-desc">End-to-end data analysis pipeline using Python, Pandas, and NumPy. Transforms raw datasets into actionable insights with clean visual reports.</p>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Pandas</span>
+        <span class="project-tag">NumPy</span>
+        <span class="project-tag">Matplotlib</span>
+      </div>
+      <a href="#" class="project-link">GitHub <span class="project-link-arrow">→</span></a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">// 003</div>
+      <div class="project-title">Add Your Project</div>
+      <p class="project-desc">This card is powered by your FastAPI Post model — title, description, and GitHub link come straight from your database via the API.</p>
+      <div class="project-tags">
+        <span class="project-tag">Your Stack</span>
+        <span class="project-tag">Here</span>
+      </div>
+      <a href="#" class="project-link">GitHub <span class="project-link-arrow">→</span></a>
+    </div>
+  </div> -->
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="resume-inner reveal">
+    <h2 class="resume-title">Grab My<br><span>Resume.</span></h2>
+    <p class="resume-sub">A one-page summary of my experience in backend development and data analysis. Updated and ready for your inbox.</p>
+    <a id="download" href="/resume" download class="btn-download">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download Resume · PDF
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">04 — Reach Out</div>
+  <h2 class="section-title">Let's<br>Connect.</h2>
+
+  <div class="contact-grid">
+    <div class="contact-left">
+      <p class="contact-blurb">I'm open to backend roles, data analyst positions, or freelance projects. Drop me a message and I'll get back to you within 24 hours.</p>
+      <div class="contact-links">
+        <a href="mailto:you@example.com" class="contact-link-item">
+          <div class="contact-link-icon">✉</div>
+          tolutheeanalyst@gmail.com
+        </a>
+        <a href="https://github.com" target="_blank" class="contact-link-item">
+          <div class="contact-link-icon">⌥</div>
+          github.com/Lunarr2
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="contact-link-item">
+          <div class="contact-link-icon">in</div>
+          linkedin.com/in/tolu-taiwo
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form">
+      <div class="form-group">
+        <label class="form-label">Your name</label>
+        <input type="text" class="form-input" placeholder="Jane Smith">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-input" placeholder="jane@company.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Hi, I'd love to discuss..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="align-self:flex-start; margin-top:0.5rem;">Send Message →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-copy">© 2026 <span>Tolu Taiwo</span> — Built with FastAPI &amp; care</span>
+  <a href="#" class="footer-back">↑ Back to top</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          const w = bar.style.width;
+          bar.style.width = '0%';
+          setTimeout(() => { bar.style.width = w; }, 300);
+        });
+        barObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.skills-grid').forEach(el => barObserver.observe(el));
+
+  async function loadProjects() {
+    const grid = document.getElementById("projects-grid");
+    const loading = document.getElementById("projects-loading");
+
+    try {
+      // Bug 2 fix: match whatever prefix your FastAPI router uses
+      // If your router is mounted with prefix="/posts" use "/posts"
+      // If mounted with prefix="/api/posts" use "/api/posts"
+      const response = await fetch("/api/posts");
+
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+      }
+
+      const posts = await response.json();
+
+      loading.remove();
+
+      if (posts.length === 0) {
+        grid.innerHTML = '<p style="color: var(--text-muted);">No projects yet.</p>';
+        return;
+      }
+
+      posts.forEach((post, index) => {
+        const number = String(index + 1).padStart(3, "0");
+
+        const tagsHTML = post.tools
+          .map(tool => `<span class="project-tag">${tool}</span>`)
+          .join("");
+
+        const card = document.createElement("div");
+        card.className = "project-card reveal";
+        card.innerHTML = `
+          <div class="project-num">// ${number}</div>
+          <div class="project-title">${post.title}</div>
+          <p class="project-desc">${post.description}</p>
+          <div class="project-tags">${tagsHTML}</div>
+          <a href="${post.github_link}" target="_blank" class="project-link">
+            GitHub <span class="project-link-arrow">→</span>
+          </a>
+        `;
+
+        grid.appendChild(card);
+        observer.observe(card);
+      });
+
+    } catch (error) {
+      loading.textContent = `Failed to load projects: ${error.message}`;
+      console.error(error);
+    }
+  }
+
+  // document.querySelector(".btn-download").addEventListener("click", async(e) => {
+
+  //   e.preventDefault();
+
+  //   const download = 
+
+  // })
+
+  document.querySelector(".contact-form").addEventListener("submit", async(e) => {
+
+    e.preventDefault();
+
+    const name = document.querySelector('input[type="text"]').value;
+    const email = document.querySelector('input[type="email"]').value;
+    const message = document.querySelector("textarea").value;
+
+
+    await fetch("api/contact", {
+      method: "POST",
+      headers:{
+         "Content-Type": "application/json"
+      },
+      body: JSON.stringify({name,email, message})
+    });
+
+  });
+
+  loadProjects();
+</script>

@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+
+# enviroment files
+.env
+
+# MacOS files
+.DS_Store
+
+# .gitignore
+__pycache__/
+*.pyc
+*.db            ← important: don't push your local database
+uv.lock
